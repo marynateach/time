@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let timeup;
+        let counter;
+        function timer(secondsFromUser) {
+            now = new Date ();
+            timeup = now.setSeconds(now.getSeconds() + secondsFromUser);
+            counter = setInterval(go,1000);
+        }
+        function go() {
+            var now = new Date ();
+            var count = Math.round((timeup - now)/1000);
+            if(now > timeup) {
+                console.log('Timer End!');
+                clearInterval (counter);
+                return;
+            
+            }
+            var second = Math.floor((count%60));
+            var minutes =Math.floor((count/60));
+            console.log (minutes + "."+ seconds);
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+
+    <script>
+let saveTime;
+let howMuchCall = 0;
+function getTime () {
+    if (howMuchCall === 0){
+        console.log("Enabled");
+        saveTime = new Date ().getTime();
+        howMuchCall++;
+    }
+    else{
+
+    
+    let nowDate = new Date().getTime();
+    let diff = saveTime - nowDate;
+    let Seconds = Math.round(Math.abs(diff/1000));
+    console.log (`${Seconds} seconds have passed`);
+}
+}
+    </script>
+</body>
+</html>
